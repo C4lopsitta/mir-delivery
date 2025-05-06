@@ -1,0 +1,24 @@
+# Planned Endpoints
+- /
+- /api/v1
+  - /orders
+    - GET
+    - POST
+  - /orders/{uid}
+    - GET
+    - DELETE
+  - /inventory
+    - GET
+    - POST
+  - /inventory/{uid}
+    - GET
+    - PUT
+    - DELETE
+  - /classrooms
+    - GET
+    - POST
+  - /classrooms/{uid}
+    - GET
+    - PUT
+    - DELETE
+
