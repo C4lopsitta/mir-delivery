@@ -6,13 +6,14 @@ import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 import org.jetbrains.exposed.sql.transactions.transaction
+import java.util.UUID
 
 @Serializable
-data class Item(var uid: String?, val name: String, val availableQuantity: Int, val img: String)
+data class Item(var uid: String? = UUID.randomUUID().toString(), val name: String, val availableQuantity: Int, val img: String)
 
 class InventoryService(database: Database) {
     object Inventory: Table() {
-        val uid = varchar("uid", 32)
+        val uid = varchar("uid", 36)
         val name = varchar("name", 255)
         val availableQuantity = integer("available_quantity")
         val img = varchar("img", 255)
