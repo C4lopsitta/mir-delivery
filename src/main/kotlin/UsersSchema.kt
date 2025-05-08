@@ -1,4 +1,4 @@
-package dev.robaldo
+package dev.robaldo.mir_delivery
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.serialization.Serializable

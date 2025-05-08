@@ -9,11 +9,12 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "2.1.10"
 }
 
-group = "dev.robaldo"
+group = "dev.robaldo.mir_delivery"
 version = "0.0.1"
 
 application {
     mainClass = "io.ktor.server.netty.EngineMain"
+//    mainClass = "dev.robaldo.mir_delivery.ApplicationKt"
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")

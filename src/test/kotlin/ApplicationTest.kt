@@ -1,5 +1,6 @@
 package dev.robaldo
 
+import dev.robaldo.mir_delivery.module
 import io.ktor.client.request.*
 import io.ktor.http.*
 import io.ktor.server.testing.*

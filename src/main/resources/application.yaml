@@ -1,6 +1,6 @@
 ktor:
   application:
     modules:
-      - dev.robaldo.ApplicationKt.module
+      - dev.robaldo.mir_delivery.ApplicationKt.module
   deployment:
     port: 8080

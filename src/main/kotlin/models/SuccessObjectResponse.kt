@@ -1,4 +1,4 @@
-package dev.robaldo.models
+package dev.robaldo.mir_delivery.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

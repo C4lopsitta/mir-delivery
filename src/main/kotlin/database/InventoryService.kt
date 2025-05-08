@@ -1,4 +1,4 @@
-package dev.robaldo
+package dev.robaldo.mir_delivery.database
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.serialization.Serializable
@@ -9,7 +9,12 @@ import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.UUID
 
 @Serializable
-data class Item(var uid: String? = UUID.randomUUID().toString(), val name: String, val availableQuantity: Int, val img: String)
+data class Item(
+    var uid: String? = UUID.randomUUID().toString(),
+    val name: String = "",
+    val availableQuantity: Int = 0,
+    val img: String = ""
+)
 
 class InventoryService(database: Database) {
     object Inventory: Table() {

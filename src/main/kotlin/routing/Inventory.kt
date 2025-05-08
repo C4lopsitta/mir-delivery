@@ -1,10 +1,10 @@
-package dev.robaldo.routing
+package dev.robaldo.mir_delivery.routing
 
-import dev.robaldo.InventoryService
-import dev.robaldo.Item
-import dev.robaldo.models.ErrorResponse
-import dev.robaldo.models.SuccessObjectResponse
-import dev.robaldo.models.SuccessResponse
+import dev.robaldo.mir_delivery.database.InventoryService
+import dev.robaldo.mir_delivery.database.Item
+import dev.robaldo.mir_delivery.models.ErrorResponse
+import dev.robaldo.mir_delivery.models.SuccessObjectResponse
+import dev.robaldo.mir_delivery.models.SuccessResponse
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*
@@ -50,6 +50,16 @@ fun Application.configureRoutingInventory(database: Database) {
             }
 
             call.respond(item)
+        }
+
+        put("/api/v1/inventory/{uid}") {
+            val itemUid = call.parameters["uid"]
+            if (itemUid == null) {
+                call.respond( HttpStatusCode.BadRequest, ErrorResponse("Invalid UID", httpStatus = 400) )
+            }
+
+            val item = inventoryService.read(itemUid!!)
+            TODO("Find way to properly update")
         }
 
         post("/api/v1/inventory") {

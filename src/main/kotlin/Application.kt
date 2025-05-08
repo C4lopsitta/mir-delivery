@@ -1,6 +1,6 @@
-package dev.robaldo
+package dev.robaldo.mir_delivery
 
-import dev.robaldo.routing.configureRoutingInventory
+import dev.robaldo.mir_delivery.routing.configureRoutingInventory
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.plugins.contentnegotiation.*

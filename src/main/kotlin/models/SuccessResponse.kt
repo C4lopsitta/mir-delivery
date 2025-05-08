@@ -1,4 +1,4 @@
-package dev.robaldo.models
+package dev.robaldo.mir_delivery.models
 
 import io.ktor.http.*
 import kotlinx.serialization.Serializable
